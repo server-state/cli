@@ -1,5 +1,5 @@
 {
-  "name": "cbm-cli",
+  "name": "@server-state/cbm-cli",
   "version": "0.0.9",
   "description": "A CBM test environment with integrated build, test, and deploy options",
   "repository": {
@@ -14,5 +14,33 @@
   "homepage": "https://github.com/server-state/cbm-cli#readme",
   "bin": {
     "cbm-cli": "./bin/cbm-cli.js"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/styles": "^4.5.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.3"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@material-ui/core": "^4.5.2",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/styles": "^4.5.2",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-test-renderer": "^16.11.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
