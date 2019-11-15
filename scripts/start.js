@@ -14,8 +14,12 @@ const PORT = 3001;
 
 module.exports = function() {
     // check required files
-    if (!fs.existsSync(paths.testEnvironmentJS) || !fs.existsSync(paths.testEnvironmentHTML)) {
-        console.error('Entry files are missing.');
+    if (!fs.existsSync(paths.testEnvironmentJS)) {
+        console.error('Missing entry file: ' + paths.testEnvironmentJS);
+        return 1;
+    }
+    if (!fs.existsSync(paths.testEnvironmentHTML)) {
+        console.error('Missing entry file: ' + paths.testEnvironmentHTML);
         return 1;
     }
 
