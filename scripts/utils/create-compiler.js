@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const cli = require('cli');
 
 const clearConsole = require('./clear-console');
 
@@ -9,11 +10,11 @@ module.exports = function(config) {
     try {
         compiler = webpack(config);
     } catch (err) {
-        console.log('Can not compile.');
-        process.exit(1);
+        cli.fatal('Can not compile.');
     }
 
     compiler.hooks.beforeCompile.tap('invalid', () => {
+        // nice user output, so no usage of cli tool
         if (isInteractive) {
             clearConsole();
         }
@@ -21,6 +22,7 @@ module.exports = function(config) {
     });
 
     compiler.hooks.done.tap('done', stats => {
+        // nice user output, so no usage of cli tool
         if (isInteractive) {
             console.log('\033[2J');
         }
@@ -31,6 +33,7 @@ module.exports = function(config) {
             errors: true
         });
 
+        // nice user output, so no usage of cli tool
         if (statsRes.errors.length > 0) {
             console.log('\x1b[1;31m%s\x1b[0m', 'Can not compile.');
         } else if (statsRes.warnings.length > 0) {

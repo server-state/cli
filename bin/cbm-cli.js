@@ -26,7 +26,7 @@ switch (command.toLowerCase()) {
         require('../scripts/test')(options, args);
         break;
     case 'test-cli':
-        require('../scripts/test')(options, args);
+        require('../scripts/test-cli')(options, args);
         break;
     default:
         cli.fatal('Undefined command: ' + command);
