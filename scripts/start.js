@@ -25,12 +25,12 @@ module.exports = function() {
     cli.ok('Found all required files');
 
     cli.debug('Create webpack compiler');
-    cli.debug('Path to webpack config: ' + path.resolve(webpackConfig));
+    cli.debug('Path to webpack config: ' + webpackConfig);
     const compiler = createCompiler(webpackConfig);
     cli.ok('Webpack compiler created');
 
     cli.debug('Create webpack dev server');
-    cli.debug('Path to webpack dev server config: ' + path.resolve(webServerConfig));
+    cli.debug('Path to webpack dev server config: ' + webServerConfig);
     const devServer = new WebpackDevServer(compiler, webServerConfig);
     cli.ok('Webpack dev server created');
 
