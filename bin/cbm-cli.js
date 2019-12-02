@@ -15,8 +15,6 @@ const options = cli.parse({}, commands);
 
 const { command, args } = cli;
 
-
-
 switch (command.toLowerCase()) {
     case 'build':
         require('../scripts/build')(options, args);
@@ -31,15 +29,5 @@ switch (command.toLowerCase()) {
         require('../scripts/test')(options, args);
         break;
     default:
-        cli.error('Undefined command.');
+        cli.fatal('Undefined command: ' + command);
 }
-//
-// const script = process.argv.slice(2)[0];
-//
-// if (['build', 'start', 'test', 'test-cli'].includes(script)) {
-//     const returnValue = require('../scripts/' + script)() || 0;
-//     process.exit(returnValue);
-// } else {
-//     console.log('Unknown script: ' + script);
-//     console.log('Valid options are: \'build\', \'start\', \'test\', \'test-cli\'');
-// }
