@@ -1,7 +1,7 @@
 const path = require('path');
 
 const appRoot = path.resolve(process.cwd());
-const moduleRoot = path.resolve('./');
+const moduleRoot = path.dirname(require.resolve('@server-state/cbm-cli/package.json'));
 
 const testEnvironment = path.join(moduleRoot, 'test-environment');
 const appSrc = path.join(appRoot, 'src');
