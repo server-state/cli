@@ -1,4 +1,5 @@
 const fs = require('fs');
+const cli = require('cli');
 const WebpackDevServer = require('webpack-dev-server');
 
 const paths = require('../configs/paths');
@@ -13,21 +14,24 @@ const HOST = '127.0.0.1';
 const PORT = 3001;
 
 module.exports = function() {
-    // check required files
+    cli.debug('Check existence of required files');
     if (!fs.existsSync(paths.testEnvironmentJS)) {
-        console.error('Missing entry file: ' + paths.testEnvironmentJS);
-        return 1;
+        cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);
     }
     if (!fs.existsSync(paths.testEnvironmentHTML)) {
-        console.error('Missing entry file: ' + paths.testEnvironmentHTML);
-        return 1;
+        cli.fatal('Missing entry file: ' + paths.testEnvironmentHTML);
     }
+    cli.ok('Found all required files');
 
-    // create and hook up compiler
+    cli.debug('Create webpack compiler');
     const compiler = createCompiler(webpackConfig);
-    // create and start Webpack Dev Server
-    const devServer = new WebpackDevServer(compiler, webServerConfig);
+    cli.ok('Webpack compiler created');
 
+    cli.debug('Create webpack dev server');
+    const devServer = new WebpackDevServer(compiler, webServerConfig);
+    cli.ok('Webpack dev server created');
+
+    cli.debug('Start debug server');
     devServer.listen(PORT, HOST, err => {
         if (err) {
             clearConsole();
