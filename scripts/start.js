@@ -41,10 +41,11 @@ module.exports = function() {
     devServer.listen(PORT, HOST, err => {
         if (err) {
             clearConsole();
+            console.log('\x1b[1;31m%s\x1b[0m', 'Can not compile.');
+            console.log(err);
         }
         if (isInteractive) {
             clearConsole();
-            //console.log('\033[2J'); // clears console
         }
 
         console.log('\x1b[1;33m%s\x1b[0m', 'Starting CBM test environment ...');
