@@ -14,6 +14,11 @@ const HOST = '127.0.0.1';
 const PORT = 3001;
 
 module.exports = function() {
+    cli.debug('AppRoot: ' + paths.appRoot);
+    cli.debug('AppSrc: ' + paths.appSrc);
+    cli.debug('ModuleRoot: ' + paths.moduleRoot);
+
+
     cli.debug('Check existence of required files');
     if (!fs.existsSync(paths.testEnvironmentJS)) {
         cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);

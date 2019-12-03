@@ -17,6 +17,7 @@ const outputPath = path.join(appRoot, 'dist/');
 
 module.exports = {
     appRoot,
+    appSrc,
     moduleRoot,
     testEnvironment,
     testEnvironmentJS,
