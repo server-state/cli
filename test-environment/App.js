@@ -8,11 +8,8 @@ import SimpleDashboard from './components/simple-dashboard';
 
 import { appSrcJS, appSamples } from '../configs/paths';
 
-let CBM = null;
-let sampleData = [];
-
-import(appSrcJS).then(module => CBM = module);
-import(appSamples).then(samples => sampleData = samples);
+let CBM = import(appSrcJS);
+let sampleData = import(appSamples);
 
 const defaultData = [{
     name: 'Default',
