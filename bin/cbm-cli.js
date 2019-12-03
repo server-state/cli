@@ -11,7 +11,7 @@ const commands = {
 
 cli.enable('status', 'version', 'status');
 cli.setApp(packageJSON.name, packageJSON.version);
-const options = cli.parse({}, commands);
+const options = cli.parse(null, commands);
 
 const { command, args } = cli;
 
