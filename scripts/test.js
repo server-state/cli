@@ -1,3 +1,5 @@
+const cli = require('cli');
+
 module.exports = function() {
-    console.log('Not implemented yet.');
+    cli.fatal('Not implemented yet.');
 };

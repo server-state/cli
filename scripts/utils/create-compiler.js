@@ -24,7 +24,7 @@ module.exports = function(config) {
     compiler.hooks.done.tap('done', stats => {
         // nice user output, so no usage of cli tool
         if (isInteractive) {
-            console.log('\033[2J');
+            clearConsole();
         }
 
         const statsRes = stats.toJson({
@@ -36,8 +36,10 @@ module.exports = function(config) {
         // nice user output, so no usage of cli tool
         if (statsRes.errors.length > 0) {
             console.log('\x1b[1;31m%s\x1b[0m', 'Can not compile.');
+            console.log(JSON.stringify(statsRes.errors, null, 2));
         } else if (statsRes.warnings.length > 0) {
             console.log('\x1b[1;33m%s\x1b[0m', 'Compiled with warnings.');
+            console.log(JSON.stringify(statsRes.warnings, null, 2));
         } else {
             console.log('\x1b[1;32m%s\x1b[0m', 'Successfully compiled.');
         }

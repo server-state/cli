@@ -18,7 +18,6 @@ module.exports = function() {
     cli.debug('AppSrc: ' + paths.appSrc);
     cli.debug('ModuleRoot: ' + paths.moduleRoot);
 
-
     cli.debug('Check existence of required files');
     if (!fs.existsSync(paths.testEnvironmentJS)) {
         cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);
@@ -44,7 +43,8 @@ module.exports = function() {
             clearConsole();
         }
         if (isInteractive) {
-            console.log('\033[2J'); // clears console
+            clearConsole();
+            //console.log('\033[2J'); // clears console
         }
 
         console.log('\x1b[1;33m%s\x1b[0m', 'Starting CBM test environment ...');
