@@ -52,8 +52,8 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            __CBM__: paths.appSrcJS,
-            __SAMPLES__: paths.appSamples
+            __CBM__: JSON.stringify(paths.appSrcJS),
+            __SAMPLES__: JSON.stringify(paths.appSamples)
         })
     ]
 };

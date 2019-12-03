@@ -6,9 +6,11 @@ import DrawerContent from './components/drawer-content';
 import AppBar from './components/app-bar';
 import SimpleDashboard from './components/simple-dashboard';
 
-// not final yet
-import CBM from __CBM__;
-import sampleData from __SAMPLES__;
+const CBM = require(CBMPATH).default;
+const sampleData = require(SAMPLESPATH).default;
+
+//console.log(`CBM path: ${CBMPATH}`);
+//console.log(`Sample Data path: ${SAMPLESPATH}`);
 
 const defaultData = [{
     name: 'Default',
