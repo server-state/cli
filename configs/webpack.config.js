@@ -50,6 +50,10 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            __CBM__: paths.appSrcJS,
+            __SAMPLES__: paths.appSamples
+        })
     ]
 };
