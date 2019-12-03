@@ -6,9 +6,13 @@ import DrawerContent from './components/drawer-content';
 import AppBar from './components/app-bar';
 import SimpleDashboard from './components/simple-dashboard';
 
-import CBM from '../src';
-import sampleData from '../src/sample-data.js';
+import { appSrcJS, appSamples } from '../configs/paths';
 
+let CBM = null;
+let sampleData = [];
+
+import(appSrcJS).then(module => CBM = module);
+import(appSamples).then(samples => sampleData = samples);
 
 const defaultData = [{
     name: 'Default',

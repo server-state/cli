@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const cli = require('cli');
 const WebpackDevServer = require('webpack-dev-server');
 

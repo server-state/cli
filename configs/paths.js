@@ -11,6 +11,7 @@ const testEnvironmentHTML = path.join(testEnvironment, 'public/index.html');
 const testEnvironmentContentBase = path.join(testEnvironment, 'public');
 
 const appSrcJS = path.join(appSrc, 'index.js');
+const appSamples = path.join(appSrc, 'sample-data.js');
 
 const outputPath = path.join(appRoot, 'dist/');
 
@@ -22,5 +23,6 @@ module.exports = {
     testEnvironmentHTML,
     testEnvironmentContentBase,
     appSrcJS,
+    appSamples,
     outputPath
 };
