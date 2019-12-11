@@ -2,9 +2,9 @@ const fs = require('fs');
 const cli = require('cli');
 const WebpackDevServer = require('webpack-dev-server');
 
-const paths = require('../configs/paths');
-const webpackConfig = require('../configs/webpack.config');
-const webServerConfig = require('../configs/webpackDevServer.config');
+const paths = require('./config/paths');
+const webpackConfig = require('./config/webpack.config');
+const webServerConfig = require('./config/webpackDevServer.config');
 
 const clearConsole = require('./utils/clear-console');
 const createCompiler = require('./utils/create-compiler');

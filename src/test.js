@@ -1,7 +1,7 @@
 const cli = require('cli');
 const jest = require('jest');
 
-module.exports = function(options, args) {
+module.exports = function(options) {
     cli.debug('Start jest test');
 
     // generate args for jest with given options (parsed down initially)

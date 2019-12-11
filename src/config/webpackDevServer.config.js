@@ -1,5 +1,6 @@
 const paths = require('./paths');
 
+// noinspection WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting
 module.exports = {
     // log messages
     noInfo: true,
