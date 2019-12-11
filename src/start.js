@@ -1,8 +1,7 @@
-const fs = require('fs');
+const path = require('path');
 const cli = require('cli');
 const WebpackDevServer = require('webpack-dev-server');
 
-const paths = require('./config/paths');
 const webpackConfig = require('./config/webpack.config');
 const webServerConfig = require('./config/webpackDevServer.config');
 
@@ -12,20 +11,20 @@ const createCompiler = require('./utils/create-compiler');
 const isInteractive = process.stdout.isTTY;
 const HOST = '127.0.0.1';
 const PORT = 3001;
+const cwd = path.resolve(process.cwd());
 
 module.exports = function() {
-    cli.debug('AppRoot: ' + paths.appRoot);
-    cli.debug('AppSrc: ' + paths.appSrc);
-    cli.debug('ModuleRoot: ' + paths.moduleRoot);
+    cli.debug('AppRoot: ' + cwd);
 
-    cli.debug('Check existence of required files');
-    if (!fs.existsSync(paths.testEnvironmentJS)) {
-        cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);
-    }
-    if (!fs.existsSync(paths.testEnvironmentHTML)) {
-        cli.fatal('Missing entry file: ' + paths.testEnvironmentHTML);
-    }
-    cli.ok('Found all required files');
+    // built in with Webpack Compiler
+    // cli.debug('Check existence of required files');
+    // if (!fs.existsSync(paths.testEnvironmentJS)) {
+    //     cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);
+    // }
+    // if (!fs.existsSync(paths.testEnvironmentHTML)) {
+    //     cli.fatal('Missing entry file: ' + paths.testEnvironmentHTML);
+    // }
+    // cli.ok('Found all required files');
 
     cli.debug('Create webpack compiler');
     cli.debug('Webpack config: ' + JSON.stringify(webpackConfig, null, 2));

@@ -1,16 +1,17 @@
+const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const paths = require('./paths');
+const cwd = path.resolve(process.cwd());
 
 module.exports = {
     mode: 'development',
     entry: {
-        main: paths.testEnvironmentJS
+        main: require('@server-state/cbm-test-environment')
     },
     output: {
         filename: 'bundle.js',
-        path: paths.outputPath,
+        path: path.join(cwd, 'dist'), // temporary dist folder in user repo
         publicPath: '/'
     },
     resolve: {
@@ -20,7 +21,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                // exclude: /node_modules/,
+                // exclude: /node_modules/,  // thats important for replacement of magic vars in test env
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -46,14 +47,14 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: paths.testEnvironmentHTML,
+            template: '../../public/index.html',
             filename: 'index.html',
             inject: 'body'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            __CBMPATH__: JSON.stringify(paths.appSrcJS),
-            __SAMPLESPATH__: JSON.stringify(paths.appSamples)
+            __CBMPATH__: JSON.stringify(path.join(cwd, 'src/index.js')),
+            __SAMPLESPATH__: JSON.stringify(path.join(cwd, 'src/sample-data.js'))
         })
     ]
 };
