@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const cli = require('cli');
 const WebpackDevServer = require('webpack-dev-server');
@@ -12,19 +13,21 @@ const isInteractive = process.stdout.isTTY;
 const HOST = '127.0.0.1';
 const PORT = 3001;
 const cwd = path.resolve(process.cwd());
+const cbmIndex = path.join(cwd, 'src/index.js');
+const cbmSamples = path.join(cwd, 'src/sample-data.js');
 
 module.exports = function() {
     cli.debug('AppRoot: ' + cwd);
+    cli.debug('cbm-test-environment main: ');
 
-    // built in with Webpack Compiler
-    // cli.debug('Check existence of required files');
-    // if (!fs.existsSync(paths.testEnvironmentJS)) {
-    //     cli.fatal('Missing entry file: ' + paths.testEnvironmentJS);
-    // }
-    // if (!fs.existsSync(paths.testEnvironmentHTML)) {
-    //     cli.fatal('Missing entry file: ' + paths.testEnvironmentHTML);
-    // }
-    // cli.ok('Found all required files');
+    cli.debug('Check existence of required files');
+    if (!fs.existsSync(cbmIndex)) {
+        cli.fatal('Missing cbm entry file: ' + cbmIndex);
+    }
+    if (!fs.existsSync(cbmSamples)) {
+        cli.fatal('Missing cbm samples: ' + cbmSamples);
+    }
+    cli.ok('Found all required files');
 
     cli.debug('Create webpack compiler');
     cli.debug('Webpack config: ' + JSON.stringify(webpackConfig, null, 2));

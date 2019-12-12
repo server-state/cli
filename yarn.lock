@@ -980,8 +980,7 @@
 
 "@server-state/cbm-test-environment@https://github.com/server-state/cbm-test-environment":
   version "0.0.9"
-  uid "6df8e2659959957687cb85fdbd90682e76fedf0d"
-  resolved "https://github.com/server-state/cbm-test-environment#6df8e2659959957687cb85fdbd90682e76fedf0d"
+  resolved "https://github.com/server-state/cbm-test-environment#fea94d8c180798893b22ad579e08dec3debbf0e0"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"

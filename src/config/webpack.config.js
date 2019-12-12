@@ -7,7 +7,7 @@ const cwd = path.resolve(process.cwd());
 module.exports = {
     mode: 'development',
     entry: {
-        main: require('@server-state/cbm-test-environment')
+        main: require.resolve('@server-state/cbm-test-environment')
     },
     output: {
         filename: 'bundle.js',
@@ -21,7 +21,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                // exclude: /node_modules/,  // thats important for replacement of magic vars in test env
+                // exclude: /node_modules/,  // that is important for replacement of magic vars in test env
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -47,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: '../../public/index.html',
+            template: path.join(path.dirname(require.resolve('@server-state/cbm-test-environment')), 'public/index.html'),
             filename: 'index.html',
             inject: 'body'
         }),

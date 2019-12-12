@@ -1,3 +1,5 @@
+const path = require('path');
+
 // noinspection WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting,WebpackConfigHighlighting
 module.exports = {
     // log messages
@@ -9,6 +11,6 @@ module.exports = {
     // server configuration
     compress: true,
     hot: true,
-    contentBase: '../../public',
+    contentBase: path.join(path.dirname(require.resolve('@server-state/cbm-test-environment')), 'public'),
     publicPath: '/'
 };
