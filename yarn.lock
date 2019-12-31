@@ -995,8 +995,8 @@
 
 "@server-state/cbm-test-environment@https://github.com/server-state/cbm-test-environment":
   version "0.0.9"
-  uid "41351473bac1bf5396c2ed2c786f9b4614fc0502"
-  resolved "https://github.com/server-state/cbm-test-environment#41351473bac1bf5396c2ed2c786f9b4614fc0502"
+  uid "0da958b53b422bb5fac30dbc4ba96bf97508ba72"
+  resolved "https://github.com/server-state/cbm-test-environment#0da958b53b422bb5fac30dbc4ba96bf97508ba72"
   dependencies:
     "@babel/cli" "^7.7.7"
     "@babel/core" "^7.7.7"
@@ -1012,7 +1012,7 @@
     prop-types "^15.7.2"
     react "^16.12.0"
     react-dom "^16.12.0"
-    webpack "^4.41.4"
+    webpack "^4.41.5"
     webpack-cli "^3.3.10"
     webpack-dev-server "^3.10.1"
 
@@ -7084,7 +7084,7 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.41.4, webpack@^4.41.5:
+webpack@^4.41.5:
   version "4.41.5"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.5.tgz#3210f1886bce5310e62bb97204d18c263341b77c"
   integrity sha512-wp0Co4vpyumnp3KlkmpM5LWuzvZYayDwM2n17EHFr4qxBBbRokC7DJawPJC7TfSFZ9HZ6GsdH40EBj4UV0nmpw==
