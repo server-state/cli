@@ -24,7 +24,7 @@ switch (command.toLowerCase()) {
         require('./build')(options, args);
         break;
     case 'start':
-        require('./temp-start')(options, args);
+        require('./start')(options, args);
         break;
     case 'test':
         require('./test')(options, args);
