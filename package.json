@@ -1,5 +1,5 @@
 {
-  "name": "@server-state/cbm-cli",
+  "name": "@server-state/cli",
   "version": "0.0.9",
   "description": "A CBM test environment with integrated build, test, and deploy options",
   "repository": {
