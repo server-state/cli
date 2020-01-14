@@ -20,7 +20,7 @@
     "build": "echo \"Please do not use the build step. Webpack can not compile the cbm-test-environment correctly. Use with care!\" #webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
-    "@babel/cli": "^7.8.0",
+    "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.0",
