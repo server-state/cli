@@ -21,10 +21,10 @@
     "update": "git submodule update --remote cbm-test-environment"
   },
   "dependencies": {
-    "@babel/cli": "^7.8.0",
-    "@babel/core": "^7.8.0",
-    "@babel/preset-env": "^7.8.2",
-    "@babel/preset-react": "^7.8.0",
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "@material-ui/core": "^4.8.3",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.8.2",
