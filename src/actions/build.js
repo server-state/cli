@@ -5,16 +5,21 @@ const { genInputOptions, genOutputOptions } = require('../configs/genRollupConfi
 
 /**
  * Builds the cbm based on given paths with rollup + plugins.
- * @param paths given/defined paths
  * @returns {Promise<void>} empty promise?
  */
-module.exports = async function(paths) {
+module.exports = async function() {
+    cli.debug("Start build process with rollup");
+
+    // generate new paths
+    const genPaths = require('../configs/genPaths');
+    const paths = genPaths(process.cwd());
+
     // generate required input and output options for rollup
     cli.debug("Generate input and output options for rollup");
     const inputOptions = genInputOptions(paths);
     const outputOptions = genOutputOptions(paths);
 
-    cli.ok("Generated io options for rollup");
+    cli.debug("Generated io options for rollup");
     cli.debug("inputOptions: " + JSON.stringify(inputOptions, null, 2));
     cli.debug("outputOptions: " + JSON.stringify(outputOptions, null, 2));
 
@@ -27,4 +32,5 @@ module.exports = async function(paths) {
     // generate code and write to defined output file
     cli.debug("Write bundle to output file: " + outputOptions.file);
     await bundle.write(outputOptions);
+    cli.ok('Successfully built.');
 };

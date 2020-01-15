@@ -3,8 +3,12 @@ const jest = require('jest');
 
 const genJestConfig = require('../configs/genJestConfig');
 
-module.exports = function(paths, options) {
-    cli.debug('Start jest testing');
+/**
+ * Do unit tests with Jest.
+ * @param options arguments passed to Jest
+ */
+module.exports = function(options) {
+    cli.debug('Start unit testing with Jest');
 
     // generate args for jest with given options (parsed down initially)
     const argv = [];
@@ -12,10 +16,8 @@ module.exports = function(paths, options) {
         argv.push('--' + elem);
     }
 
-    // append our self generated jest config to override possible transform issues
-    argv.push('--config', JSON.stringify(
-        genJestConfig()
-    ));
+    // append the self generated jest config to override possible transform issues
+    argv.push('--config', JSON.stringify(genJestConfig()));
 
     // start jest environment
     jest.run(argv)
