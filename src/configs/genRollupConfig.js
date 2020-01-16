@@ -14,12 +14,16 @@ module.exports = {
         external: ['react', 'prop-types', '@material-ui/core', '@material-ui/styles', '@material-ui/icons'],
         input: paths.appSrcIndex,
         plugins: [
+            resolve(),
             babel({
                 exclude: 'node_modules/**',
                 presets: [ '@babel/preset-env', '@babel/preset-react' ]
             }),
-            resolve(),
-            commonjs(),
+            commonjs({
+                namedExports: {
+                    'node_modules/react-dom/index.js': [ 'createPortal', 'findDOMNode' ]
+                }
+            }),
             terser(),
         ]
     }),

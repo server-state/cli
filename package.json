@@ -18,7 +18,7 @@
   "scripts": {
     "test": "jest",
     "build": "echo \"Please do not use the build step. Webpack can not compile the cbm-test-environment correctly. Use with care!\" #webpack --config webpack.config.js --mode production",
-    "update": "git submodule update --remote cbm-test-environment"
+    "submodule:update": "git submodule update --remote cbm-test-environment"
   },
   "dependencies": {
     "@babel/cli": "^7.8.3",

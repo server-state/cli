@@ -1,10 +1,7 @@
-tests
-src
 .github
-wrapper
+tests
 
-.eslintrc.js
-.travis.yml
-.babelrc
-babel.config.js
+jest.config.js
+webpack.config.js
 .idea
+.vscode
