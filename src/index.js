@@ -26,7 +26,8 @@ switch (command.toLowerCase()) {
         require('./actions/init')(options, args);
         break;
     case 'build':
-        require('./actions/build')(options, args);
+        require('./actions/build')(options, args)
+            .catch(err => cli.fatal(err));
         break;
     case 'start':
         require('./actions/start')(options, args);
