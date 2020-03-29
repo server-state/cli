@@ -1,6 +1,6 @@
 {
   "name": "@server-state/cli",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A CBM test environment with integrated build, test, and deploy options",
   "repository": {
     "type": "git",
