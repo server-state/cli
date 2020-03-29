@@ -18,13 +18,14 @@ module.exports = {
      */
     genInputOptions: (paths) => {
         const packageJSON = require(paths.appPkg);
-        let input = paths.appSrcIndex;
+        let input = '';
 
         // allow overwriting rollup entry file with the main key in the package.json
         if (typeof packageJSON.main === 'string') {
             input = path.resolve(packageJSON.main);
         } else {
             cli.debug('\'main\' is not specified or not of type \'string\' in package.json. Using default path.');
+            input = paths.appSrcIndex;
         }
 
         // noinspection JSUnusedGlobalSymbols
