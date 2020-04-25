@@ -1,25 +1,24 @@
 {
   "name": "@server-state/cli",
-  "version": "0.0.13",
-  "description": "A CBM test environment with integrated build, test, and deploy options",
+  "version": "0.1.0",
+  "description": "The Server State command line interface",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/server-state/cbm-cli.git"
+    "url": "git+https://github.com/server-state/cli.git"
   },
   "author": "server-state",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/server-state/cbm-cli/issues"
+    "url": "https://github.com/server-state/cli/issues"
   },
-  "homepage": "https://github.com/server-state/cbm-cli#readme",
+  "homepage": "https://github.com/server-state/cli#readme",
   "bin": {
-    "server-state": "./src/index.js"
+    "server-state": "bin/server-state"
   },
   "scripts": {
-    "test": "jest",
-    "build": "echo \"Please do not use the build step. Webpack can not compile the cbm-test-environment correctly. Use with care!\" #webpack --config webpack.config.js --mode production",
     "submodule:init": "git submodule init",
-    "submodule:update": "git submodule update"
+    "submodule:update": "git submodule update",
+    "initialize": "npm run submodule:init && npm ci"
   },
   "dependencies": {
     "@babel/cli": "^7.8.4",
@@ -36,7 +35,6 @@
     "chalk": "^4.0.0",
     "cli": "^1.0.1",
     "html-webpack-plugin": "^4.0.3",
-    "jest": "^25.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

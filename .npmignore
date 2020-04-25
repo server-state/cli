@@ -1,7 +1,6 @@
 .github
 tests
 
-jest.config.js
 webpack.config.js
 .idea
 .vscode

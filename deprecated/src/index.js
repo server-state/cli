@@ -2,7 +2,7 @@
 const cli = require('cli');
 
 // prepare the cli tool
-const packageJSON = require('../package.json');
+const packageJSON = require('../../package.json');
 const commands = {
     'init': 'Initialize a new server base module and/or a client base module',
     'build': 'Build the client base module for production use',
