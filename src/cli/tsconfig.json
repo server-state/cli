@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/cli",
+    "rootDir": "."
+  },
+  "references": [
+    { "path": "../lib" },
+    { "path": "../actions/build" },
+    { "path": "../actions/eject" },
+    { "path": "../actions/init" },
+    { "path": "../actions/start" },
+    { "path": "../actions/test" },
+    { "path": "../actions/test-e2e" }
+  ]
+}

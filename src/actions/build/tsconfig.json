@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/actions/build",
+    "rootDir": "."
+  },
+  "references": [
+    { "path": "../../lib" }
+  ]
+}

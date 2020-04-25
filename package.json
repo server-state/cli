@@ -13,12 +13,14 @@
   },
   "homepage": "https://github.com/server-state/cli#readme",
   "bin": {
-    "server-state": "bin/server-state"
+    "server-state": "./bin/server-state"
   },
   "scripts": {
     "submodule:init": "git submodule init",
     "submodule:update": "git submodule update",
-    "initialize": "npm run submodule:init && npm ci"
+    "typescript:build": "tsc -b -v",
+    "typescript:clean": "tsc -b --clean",
+    "setup": "npm run submodule:init && npm ci && npm run typescript:build"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
@@ -45,5 +47,9 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "typescript": "^3.8.3"
   }
 }

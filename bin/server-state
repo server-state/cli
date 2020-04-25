@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 // pull compiled code from distribute
-require('../dist');
+require('../dist/cli');

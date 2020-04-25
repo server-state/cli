@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./src/lib" },
+    { "path": "./src/cli" },
+    { "path": "./src/actions/build" },
+    { "path": "./src/actions/eject" },
+    { "path": "./src/actions/init" },
+    { "path": "./src/actions/start" },
+    { "path": "./src/actions/test" },
+    { "path": "./src/actions/test-e2e" }
+  ]
+}
