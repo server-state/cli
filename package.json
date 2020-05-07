@@ -36,7 +36,7 @@
     "chalk": "^4.0.0",
     "cli": "^1.0.1",
     "html-webpack-plugin": "^4.0.3",
-    "jest": "^25.1.0",
+    "jest": "^26.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
