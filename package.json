@@ -1,50 +1,43 @@
 {
-    "name": "@server-state/cli",
-    "version": "0.1.0",
-    "description": "The Server State command line interface",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/server-state/cli.git"
-    },
-    "author": "server-state",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/server-state/cli/issues"
-    },
-    "homepage": "https://github.com/server-state/cli#readme",
-    "bin": {
-        "server-state": "./bin/server-state"
-    },
-    "scripts": {
-        "submodule:init": "git submodule init",
-        "submodule:update": "git submodule update",
-        "typescript:build": "tsc -b -v",
-        "typescript:clean": "tsc -b --clean",
-        "prettier": "prettier --config ./prettier.config.js --write package.json \"bin/**/*\" \"src/**/*.ts\"",
-        "setup": "npm run submodule:init && npm ci && npm run typescript:build"
-    },
-    "dependencies": {
-        "@babel/cli": "^7.8.4",
-        "@babel/core": "^7.8.4",
-        "@babel/preset-env": "^7.9.5",
-        "@babel/preset-react": "^7.8.3",
-        "@material-ui/core": "^4.9.11",
-        "@material-ui/icons": "^4.9.1",
-        "@material-ui/styles": "^4.9.10",
-        "ace-builds": "^1.4.11",
-        "babel-loader": "^8.0.6",
-        "chalk": "^4.0.0",
-        "html-webpack-plugin": "^4.2.0",
-        "prop-types": "^15.7.2",
-        "react": "^16.12.0",
-        "react-ace": "^8.1.0",
-        "react-dom": "^16.12.0",
-        "webpack": "^4.41.6",
-        "webpack-cli": "^3.3.10",
-        "webpack-dev-server": "^3.10.3"
-    },
-    "devDependencies": {
-        "prettier": "2.0.5",
-        "typescript": "^3.8.3"
-    }
+  "name": "@server-state/cli",
+  "version": "0.1.0",
+  "description": "The Server State command line interface",
+  "bin": {
+    "server-state": "./bin/cli.js"
+  },
+  "scripts": {
+    "submodule:init": "git submodule init",
+    "submodule:update": "git submodule update",
+    "prettier": "prettier --write package.json \"bin/**/*\" \"src/**/*\"",
+    "lint": "eslint --cache --ext .js .eslintrc.js .prettierrc.js ./bin ./src",
+    "setup": "npm run submodule:init && npm ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/server-state/cli.git"
+  },
+  "keywords": [
+    "server-state",
+    "cli",
+    "command"
+  ],
+  "author": "server-state",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/server-state/cli/issues"
+  },
+  "homepage": "https://github.com/server-state/cli#readme",
+  "devDependencies": {
+    "@types/yargs": "^15.0.5",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "debug": "^4.1.1",
+    "inquirer": "^7.3.3",
+    "supports-color": "^7.1.0",
+    "yargs": "^15.4.1"
+  }
 }
