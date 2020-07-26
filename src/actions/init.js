@@ -159,9 +159,8 @@ async function handler(argv) {
 		// install dependencies in new project
 		spinner.message('Installing dependencies ...');
 		spinner.start();
-		const command = `cd '${modulePath}' && ${installCommand}`;
-		debug('Exec command:', command);
-		await exec(command);
+		debug('Exec command:', installCommand);
+		await exec(installCommand, { cwd: modulePath });
 		spinner.stop();
 		info('Dependencies installed');
 	} catch (err) {
