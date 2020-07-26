@@ -1,43 +1,46 @@
 {
-  "name": "@server-state/cli",
-  "version": "0.1.0",
-  "description": "The Server State command line interface",
-  "bin": {
-    "server-state": "./bin/cli.js"
-  },
-  "scripts": {
-    "submodule:init": "git submodule init",
-    "submodule:update": "git submodule update",
-    "prettier": "prettier --write package.json \"bin/**/*\" \"src/**/*\"",
-    "lint": "eslint --cache --ext .js .eslintrc.js .prettierrc.js ./bin ./src",
-    "setup": "npm run submodule:init && npm ci"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/server-state/cli.git"
-  },
-  "keywords": [
-    "server-state",
-    "cli",
-    "command"
-  ],
-  "author": "server-state",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/server-state/cli/issues"
-  },
-  "homepage": "https://github.com/server-state/cli#readme",
-  "devDependencies": {
-    "@types/yargs": "^15.0.5",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "prettier": "^2.0.5"
-  },
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "debug": "^4.1.1",
-    "inquirer": "^7.3.3",
-    "supports-color": "^7.1.0",
-    "yargs": "^15.4.1"
-  }
+	"name": "@server-state/cli",
+	"version": "0.1.0",
+	"description": "The Server State command line interface",
+	"bin": {
+		"server-state": "./bin/cli.js"
+	},
+	"scripts": {
+		"submodule:init": "git submodule init",
+		"submodule:update": "git submodule update",
+		"prettier": "prettier --write package.json \"bin/**/*\" \"src/**/*\"",
+		"lint": "eslint --cache --ext .js .eslintrc.js ./bin ./src",
+		"setup": "npm run submodule:init && npm ci"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/server-state/cli.git"
+	},
+	"keywords": [
+		"server-state",
+		"cli",
+		"command"
+	],
+	"author": "server-state",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/server-state/cli/issues"
+	},
+	"homepage": "https://github.com/server-state/cli#readme",
+	"devDependencies": {
+		"@types/yargs": "^15.0.5",
+		"eslint": "^7.5.0",
+		"eslint-config-prettier": "^6.11.0",
+		"prettier": "^2.0.5"
+	},
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"clui": "^0.3.6",
+		"debug": "^4.1.1",
+		"extract-zip": "^2.0.1",
+		"inquirer": "^7.3.3",
+		"supports-color": "^7.1.0",
+		"tmp": "^0.2.1",
+		"yargs": "^15.4.1"
+	}
 }
