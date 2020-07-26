@@ -7,6 +7,7 @@ const { Spinner } = require('clui');
 
 const { info, success, error, fatal } = require('../lib/logger');
 
+const normalize = require('../lib/normalizeModuleName');
 const downloadFile = require('../lib/downloadFile');
 const extractIntoDir = require('../lib/extractIntoDir');
 const editPackageJSON = require('../lib/editPackageJSON');
@@ -95,7 +96,7 @@ async function handler(argv) {
 	}
 
 	const moduleType = argv['type'];
-	const moduleName = argv['name'];
+	const moduleName = normalize(argv['name']);
 	const modulePath = path.join(process.cwd(), moduleName);
 	let downloadURL = argv['template'];
 
