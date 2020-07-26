@@ -147,7 +147,7 @@ async function handler(argv) {
 		// extract template into new module
 		info('Setup module ...');
 		debug('Extracting downloaded archive');
-		await extractIntoDir(tmpFile.name, modulePath, argv['keep']);
+		await extractIntoDir(tmpFile.name, modulePath);
 
 		// edit package.json in new module
 		debug('Edit package.json');

@@ -15,15 +15,13 @@ const deleteDirRecursive = require('./deleteDirRecursive');
  * in the target directory.
  * @param zipFile path to the zip file to extract into target directory
  * @param targetDir path to the target directory
- * @param keepDir keeps the directory if something went wrong
  * @returns {Promise<void>} resolves if successfully found
  * and extracted the zip file into the directory
  * and rejects in something went wrong
  */
-async function extractIntoDir(zipFile, targetDir, keepDir) {
+async function extractIntoDir(zipFile, targetDir) {
 	debug('Zip file path:', zipFile);
 	debug('Target directory:', targetDir);
-	debug('Keep target on error:', keepDir);
 
 	debug('Extract files from zip archive into target directory');
 	await extract(zipFile, { dir: targetDir });
