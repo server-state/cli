@@ -96,7 +96,13 @@ async function handler(argv) {
 	}
 
 	const moduleType = argv['type'];
-	const moduleName = normalize(argv['name']);
+	let moduleName = argv['name'];
+	try {
+		moduleName = normalize(moduleName);
+	} catch (err) {
+		error(...err);
+		process.exit(1);
+	}
 	const modulePath = path.join(process.cwd(), moduleName);
 	let downloadURL = argv['template'];
 

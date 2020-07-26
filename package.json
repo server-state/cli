@@ -41,6 +41,7 @@
 		"inquirer": "^7.3.3",
 		"supports-color": "^7.1.0",
 		"tmp": "^0.2.1",
+		"validate-npm-package-name": "^3.0.0",
 		"yargs": "^15.4.1"
 	}
 }
