@@ -46,7 +46,7 @@
     "rollup-plugin-terser": "^7.0.0",
     "url-loader": "^4.0.0",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
